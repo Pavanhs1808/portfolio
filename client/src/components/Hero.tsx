@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePlaceholder from "../assets/profile-placeholder.svg";
+import TypewriterEffect from "./TypewriterEffect";
 
 export default function Hero() {
   return (
@@ -18,7 +19,15 @@ export default function Hero() {
               Hi, I'm <span className="text-primary">Pavan HS</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-600 mb-8">
-              Software Developer & Web Enthusiast
+              <TypewriterEffect 
+                words={[
+                  "Software Developer",
+                  "Web Developer",
+                  "UI/UX Enthusiast",
+                  "Problem Solver",
+                  "Full-Stack Developer"
+                ]}
+              />
             </p>
             <div className="flex flex-wrap gap-4">
               <Button 

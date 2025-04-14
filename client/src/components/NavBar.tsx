@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Github, Linkedin, Twitter, Globe } from "lucide-react";
 import { useLocation } from "wouter";
+import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -71,6 +72,7 @@ export default function NavBar() {
           </nav>
 
           <div className="flex items-center space-x-4">
+            <ThemeToggle />
             <a
               href="https://github.com/Pavanhs1808"
               target="_blank"
@@ -128,7 +130,8 @@ export default function NavBar() {
                       {link.label}
                     </a>
                   ))}
-                  <div className="flex space-x-4 mt-4">
+                  <div className="flex items-center space-x-4 mt-4">
+                    <ThemeToggle />
                     <a
                       href="https://github.com/Pavanhs1808"
                       target="_blank"
