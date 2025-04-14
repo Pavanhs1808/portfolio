@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin } from "lucide-react";
+import { Menu, X, Github, Linkedin, Twitter, Globe } from "lucide-react";
 import { useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
@@ -10,6 +10,9 @@ const NavLinks = [
   { href: "#about", label: "About" },
   { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#certificates", label: "Certificates" },
+  { href: "#extracurricular", label: "Activities" },
   { href: "#contact", label: "Contact" },
 ];
 
@@ -86,6 +89,24 @@ export default function NavBar() {
             >
               <Linkedin className="h-5 w-5" />
             </a>
+            <a
+              href="https://x.com/PavanHs1815"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-blue-400 transition-colors"
+              aria-label="Twitter"
+            >
+              <Twitter className="h-5 w-5" />
+            </a>
+            <a
+              href="https://app.netlify.com/teams/pavanhs1808/sites"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-teal-500 transition-colors"
+              aria-label="Netlify"
+            >
+              <Globe className="h-5 w-5" />
+            </a>
             
             {/* Mobile Menu Trigger */}
             <Sheet open={openMobile} onOpenChange={setOpenMobile}>
@@ -123,6 +144,22 @@ export default function NavBar() {
                       className="text-gray-700 hover:text-blue-600 transition-colors"
                     >
                       <Linkedin className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://x.com/PavanHs1815"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-blue-400 transition-colors"
+                    >
+                      <Twitter className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://app.netlify.com/teams/pavanhs1808/sites"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-teal-500 transition-colors"
+                    >
+                      <Globe className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
