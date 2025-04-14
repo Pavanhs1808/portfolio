@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Twitter, Globe, Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
@@ -33,7 +33,7 @@ export default function Footer() {
                 <Linkedin className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://x.com/PavanHs1815"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
@@ -42,13 +42,13 @@ export default function Footer() {
                 <Twitter className="h-5 w-5" />
               </a>
               <a
-                href="#"
+                href="https://app.netlify.com/teams/pavanhs1808/sites"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white transition-colors"
-                aria-label="Instagram"
+                aria-label="Netlify"
               >
-                <Instagram className="h-5 w-5" />
+                <Globe className="h-5 w-5" />
               </a>
             </div>
           </div>
@@ -74,6 +74,21 @@ export default function Footer() {
               <li>
                 <a href="#projects" className="text-gray-400 hover:text-white transition-colors">
                   Projects
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" className="text-gray-400 hover:text-white transition-colors">
+                  Gallery
+                </a>
+              </li>
+              <li>
+                <a href="#certificates" className="text-gray-400 hover:text-white transition-colors">
+                  Certificates
+                </a>
+              </li>
+              <li>
+                <a href="#extracurricular" className="text-gray-400 hover:text-white transition-colors">
+                  Activities
                 </a>
               </li>
               <li>
