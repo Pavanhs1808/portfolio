@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import profilePlaceholder from "../assets/profile-placeholder.svg";
 
 export default function Hero() {
   return (
@@ -38,6 +39,17 @@ export default function Hero() {
               >
                 <a href="#contact">Contact Me</a>
               </Button>
+              <Button 
+                asChild 
+                variant="secondary" 
+                size="lg" 
+                className="gap-2 font-semibold"
+              >
+                <a href="#" download>
+                  Download CV
+                  <Download className="h-4 w-4" />
+                </a>
+              </Button>
             </div>
           </motion.div>
           
@@ -47,32 +59,34 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
           >
-            <div className="relative">
+            <motion.div 
+              className="relative"
+              animate={{ 
+                y: [0, -10, 0],
+              }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                ease: "easeInOut"
+              }}
+            >
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-secondary rounded-full blur opacity-30"></div>
-              <div className="relative bg-white p-3 rounded-full">
-                <div className="rounded-full w-64 h-64 md:w-80 md:h-80 bg-gray-200 overflow-hidden flex items-center justify-center">
-                  <svg
-                    className="h-32 w-32 text-gray-400"
-                    fill="none"
-                    height="24"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    width="24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
-                    <path d="M8 7h.01" />
-                    <path d="M16 7h.01" />
-                    <path d="M12 7h.01" />
-                    <path d="M4 12h16" />
-                    <path d="M4 16h16" />
-                  </svg>
+              <div className="relative bg-white p-3 rounded-full shadow-xl">
+                <div className="rounded-full w-64 h-64 md:w-80 md:h-80 overflow-hidden flex items-center justify-center">
+                  <img 
+                    src={profilePlaceholder} 
+                    alt="Pavan HS" 
+                    className="h-full w-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-3 right-5 bg-white p-2 rounded-full shadow-lg">
+                  <div className="h-10 w-10 bg-green-500 rounded-full flex items-center justify-center text-white">
+                    <span className="font-bold">✓</span>
+                  </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>
