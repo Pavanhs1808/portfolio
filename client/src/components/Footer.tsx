@@ -1,4 +1,4 @@
-import { Github, Linkedin, Twitter, Globe, Mail, Phone, MapPin } from "lucide-react";
+import { Github, Linkedin, Twitter, Globe, Instagram, Mail, Phone, MapPin } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 export default function Footer() {
@@ -49,6 +49,15 @@ export default function Footer() {
                 aria-label="Netlify"
               >
                 <Globe className="h-5 w-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/pavanhs_?igsh=MTdpMXM0MXVsNWRycg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-pink-400 transition-colors"
+                aria-label="Instagram"
+              >
+                <Instagram className="h-5 w-5" />
               </a>
             </div>
           </div>

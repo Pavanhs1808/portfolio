@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X, Github, Linkedin, Twitter, Globe } from "lucide-react";
+import { Menu, X, Github, Linkedin, Twitter, Globe, Instagram } from "lucide-react";
 import { useLocation } from "wouter";
 import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
@@ -109,6 +109,15 @@ export default function NavBar() {
             >
               <Globe className="h-5 w-5" />
             </a>
+            <a
+              href="https://www.instagram.com/pavanhs_?igsh=MTdpMXM0MXVsNWRycg=="
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 hover:text-pink-600 transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="h-5 w-5" />
+            </a>
             
             {/* Mobile Menu Trigger */}
             <Sheet open={openMobile} onOpenChange={setOpenMobile}>
@@ -163,6 +172,14 @@ export default function NavBar() {
                       className="text-gray-700 hover:text-teal-500 transition-colors"
                     >
                       <Globe className="h-5 w-5" />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/pavanhs_?igsh=MTdpMXM0MXVsNWRycg=="
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-700 hover:text-pink-600 transition-colors"
+                    >
+                      <Instagram className="h-5 w-5" />
                     </a>
                   </div>
                 </div>
