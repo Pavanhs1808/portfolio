@@ -4,6 +4,9 @@ import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 import Home from "./pages/Home";
 import ScrollToTop from "./components/ScrollToTop";
+import emailjs from '@emailjs/browser';
+
+emailjs.init("PALLtRYBITpMC5WoO");
 
 function Router() {
   return (

@@ -30,4 +30,10 @@ export default defineConfig({
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
   },
+  server: {
+    fs: {
+      allow: ['public'],
+    },
+    middlewareMode: true, // Enable middleware mode for custom handling
+  },
 });

@@ -2,30 +2,28 @@ import { motion } from "framer-motion";
 import { Award, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
 export default function Certificates() {
-  // Sample certificates data
   const certificates = [
     {
       title: "Full Stack Web Development",
-      issuer: "Udemy",
-      date: "2023",
-      credentialUrl: "#",
+      issuer: "Vreendaar IT Solutions Pvt Ltd",
+      date: "2023-2024",
+      credentialUrl: "/internship.pdf",
       skills: ["React", "Node.js", "MongoDB"],
     },
     {
-      title: "JavaScript Algorithms and Data Structures",
-      issuer: "freeCodeCamp",
-      date: "2022",
-      credentialUrl: "#",
-      skills: ["JavaScript", "Algorithms", "Data Structures"],
+      title: "Agile Project management",
+      issuer: "hp",
+      date: "2024",
+      credentialUrl: "/certificate.pdf",
+      skills: ["project managment", "Scrum", "Agile","kanban"],
     },
     {
-      title: "React - The Complete Guide",
-      issuer: "Coursera",
-      date: "2022",
-      credentialUrl: "#",
-      skills: ["React", "Redux", "Hooks"],
+      title: "Python",
+      issuer: "Udemy",
+      date: "2025",
+      credentialUrl: "pythoncertificate.pdf",
+      skills: ["Python", "Machine learning concepts"],
     },
     {
       title: "Responsive Web Design",
@@ -35,7 +33,6 @@ export default function Certificates() {
       skills: ["HTML", "CSS", "Responsive Design"],
     },
   ];
-
   const cardVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: (i: number) => ({
@@ -47,7 +44,6 @@ export default function Certificates() {
       },
     }),
   };
-
   return (
     <section id="certificates" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -64,7 +60,6 @@ export default function Certificates() {
             Professional certifications and achievements in my learning journey
           </p>
         </motion.div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {certificates.map((certificate, index) => (
             <motion.div
@@ -86,7 +81,6 @@ export default function Certificates() {
                       <p className="text-sm text-gray-500">{certificate.issuer} • {certificate.date}</p>
                     </div>
                   </div>
-                  
                   <div className="flex flex-wrap gap-2 mb-4">
                     {certificate.skills.map((skill) => (
                       <Badge key={skill} variant="outline">
@@ -94,16 +88,23 @@ export default function Certificates() {
                       </Badge>
                     ))}
                   </div>
-                  
-                  <a
-                    href={certificate.credentialUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-primary hover:text-primary/80 text-sm font-medium flex items-center mt-2"
-                  >
-                    <span>View Certificate</span>
-                    <ExternalLink className="ml-1 h-3 w-3" />
-                  </a>
+                  <div className="flex gap-2">
+                    <a
+                      href={certificate.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary hover:text-primary/80 text-sm font-medium flex items-center mt-2"
+                    >
+                      <span>View Certificate</span>
+                      <ExternalLink className="ml-1 h-3 w-3" />
+                    </a>
+                    <a
+                      href="/internship.pdf"
+                      download="internship.pdf"
+                      className="text-primary hover:text-primary/80 text-sm font-medium flex items-center mt-2"
+                    >
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </motion.div>

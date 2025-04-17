@@ -22,10 +22,8 @@ export default function Hero() {
               <TypewriterEffect 
                 words={[
                   "Software Developer",
-                  "Web Developer",
-                  "UI/UX Enthusiast",
-                  "Problem Solver",
-                  "Full-Stack Developer"
+                  "Full Stack Developer",
+                  "Problem Solver"
                 ]}
               />
             </p>

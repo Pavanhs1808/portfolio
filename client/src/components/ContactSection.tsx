@@ -8,7 +8,8 @@ import {
   Linkedin, 
   Twitter, 
   Youtube, 
-  Send 
+  Send, 
+  Instagram
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,11 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import emailjs from '@emailjs/browser';
+
+const EMAIL_SERVICE_ID = import.meta.env.VITE_EMAIL_SERVICE_ID;
+const EMAIL_TEMPLATE_ID = import.meta.env.VITE_EMAIL_TEMPLATE_ID;
+const EMAIL_PUBLIC_KEY = import.meta.env.VITE_EMAIL_PUBLIC_KEY;
 
 const contactFormSchema = z.object({
   name: z.string().min(2, {
@@ -62,13 +68,21 @@ export default function ContactSection() {
   async function onSubmit(data: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      // In a real application, you would submit this data to your backend
-      // For now, we'll just show a success toast
-      console.log("Form data:", data);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+        to_name: "Pavan",
+      };
+
+      await emailjs.send(
+        EMAIL_SERVICE_ID,
+        EMAIL_TEMPLATE_ID,
+        templateParams,
+        EMAIL_PUBLIC_KEY
+      );
+
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I will get back to you soon.",
@@ -76,6 +90,7 @@ export default function ContactSection() {
       
       form.reset();
     } catch (error) {
+      console.error('Email error:', error);
       toast({
         title: "Something went wrong.",
         description: "Your message couldn't be sent. Please try again.",
@@ -90,12 +105,12 @@ export default function ContactSection() {
     {
       icon: <Mail className="text-primary" />,
       label: "Email",
-      value: "pavanha1808@gmail.com",
+      value: "pavanhs990@gmail.com",
     },
     {
       icon: <Phone className="text-primary" />,
       label: "Phone",
-      value: "+91 98765 43210",
+      value: "+91 9606913382",
     },
     {
       icon: <MapPin className="text-primary" />,
@@ -117,12 +132,12 @@ export default function ContactSection() {
     },
     {
       icon: <Twitter />,
-      href: "#",
+      href: "https://x.com/PavanHs1815",
       hoverClass: "hover:bg-blue-400",
     },
     {
-      icon: <Youtube />,
-      href: "#",
+      icon: <Instagram />,
+      href: "https://www.instagram.com/pavanhs_?igsh=MTdpMXM0MXVsNWRycg==",
       hoverClass: "hover:bg-red-500",
     },
   ];
